@@ -1,0 +1,120 @@
+\documentclass{scrartcl}% siehe <http://www.komascript.de>
+\usepackage{selinput}% Eingabecodierung automatisch ermitteln …
+\SelectInputMappings{% … siehe <http://ctan.org/pkg/selinput>
+  adieresis={ä},
+  germandbls={ß},
+}
+\usepackage[ngerman]{babel}
+\usepackage{mdframed} % für Definitionen
+\mdtheorem[
+  linecolor=red,
+  frametitlefont=\sffamily\bfseries\color{white},
+  frametitlebackgroundcolor=red,
+]{Def}{Defintion}[subsection]
+\newcommand\circlearound[1]{%
+  \tikz[baseline]\node[draw,shape=circle,anchor=base] {#1} ;}
+
+\begin{document}
+% ----------------------------------------------------------------------------
+% Titel
+\titlehead{Fakultät für Mathematik und Informatik - Institut für Mathematik}
+\subject{statistische Verfahren}
+\title{Mitschrift}
+\subtitle{WS 17/18}
+\author{Ingo Schäfer}
+\date{ \today }
+\publishers{Jens Schumacher}
+\maketitle
+% ----------------------------------------------------------------------------
+% Inhaltsverzeichnis:
+\tableofcontents
+\pagebreak
+% ----------------------------------------------------------------------------
+% Gliederung und Text:
+\section{Klassifikation von Testarten}
+	autamisierter Integrationstest:
+	Usability-Analyse nach ISO25010 zT oder Freiwillige müssen Aufgaben ausführen
+	zusammen mit eyetracking und mousetracking (ob auf falsche stelle geschaut wurde)
+	nutzer fahren mit maus umher um richtige stelle zu finden
+	
+	code review oder werkzeugbasierte code-analyse als abschluss von einem test
+
+	\subsection{kosntruktiv vs analytisch}
+	ein anderer ansatz
+	konstr: bereits während der programmierung wird versucht fehler zu finden
+	! sehr wichtig grade bei großen projekten
+	moderne programmiersprachen (java vs c++):
+		java schließt fehler aus, die in c++ nicht gemacht werden können
+			werkzeuge: hoher komfort (durch viele ide's ... plugins...); nicht wie vor 					hundert jahren tausend mal gemacht wurde
+		Xtreme programming: 4 augen programmieren
+		TTD: von unit test:
+			zuerst unittests dann funktionsköpfe (mit return(leerer rumpf))
+			quasi drop-down programmierung (--> besser als andersrum)
+		Continuous integration!
+			heute standard: stückweise wird code auf system committed und es muss nach jedem mal funzen
+		defensives programmieren: von vornherein versuchen fehler auszuschließen
+			nicht sehr snnvoll -> braucht viel code
+			gegen alles was von außen kommt (entspricht es dem erlaubten dann ok sonst errorhandling)
+		code conventions: lange dokumente... wie style guide
+	analytisch:
+		konstr kontrolle spiel meist keine rolle
+		hier: auf fertigen code wird draufgeschaut
+		nacherstellung der sw
+		wird zur ausführung gebracht (macht sie was sie soll? erfllt sie qs-maßnahmen?)
+		.. code reviews anfertigung
+	
+	\subsubsection{statisch vs dynamisch}
+	statisch:
+		reviews oder automische codeanalyse (CQM: code quality management: z.B checkstyle...)
+		tool läuft über system und liefert viel zu viel output... gut anpassen
+			tool schätzt wie lange optimierung braucht (10000 jahre möglich...^^)
+			behebbar vs nicht-behebbar-analyse dieses logs
+			tool dahingehend aber anpassbar (ca 50)
+			zB refactoring - vorschläge
+			
+	dynamisch:
+		sw wird zur ausführung gebracht
+		-> testumgebungen mit größeren services, simulatoren, testdaten,...
+		wichtigste art der testsicherung
+		zB manuelle funktionstest, lasttest, benutzerfreundlcihkeit, test mit probanden
+		
+	\subsubsection{blackbox vs whitebox testing}
+		blackbox:
+			nicht manipuierbar
+			schwerer fehler zu provozieren
+			tests nur aufgrund von anforderungen plabar
+		whitebox:
+			kenntnis der inneren funktionsweise
+			man kann in den code eingreifen (code coverage analyse: code wird mit messcode angereichert: funktionwird so und so oft aufgerufen... analyse halt, zB bei salesforce -> verbesserung automaatisierter tests)
+			fokussierung zu sehr auf reale umsetzung (man neight nur dazu den code spezifisch zu testen)
+		leichter auch nur kleinere teile des codes zu testen
+		
+	\subsection{klassifikation nach testzweck}
+		einteiung nach: welchen zweck verfolge ich?		
+		smoke test: 
+			grundlegender erster testdurchlauf, gehts überhaupt?
+			grundsätzliche fehler werden flott gefunden, breit angesiedelt, sehr geringe testansiedelung
+		featuretest: ca 30\% des entwiclungsaufwands
+		fehlernachtest (re-test): weil fehler nicht eineutig genug beschrieben
+			schnell machen, weil geht sehr oft hin und her
+		regressionstest: nach scrum alle zwei wchen ein regressiontest(weil am ende des sprints), periodisches testen ob neue implentierungen sich mit alten vertragen
+		
+	\subsection{klassifikation ach teststufen}
+		einzelne komponenten testen vs systemtest
+		eh nicth einheitlich
+			zB:
+			entwicklertest, informell: tests werden nicht notiert (muss mit keinem drüber reden)
+				lokale begrenzt -> bestimmte schnittstellen zu anderen systemen können nicht berücksichtigt werden
+			komponoententtest:
+				komponente wird unabhängig von anderen von einem dedizierten testert getestet
+				zB wenn server laufen muss
+					-> relativ einfach auf fehler zu schließen
+				auch schnittstellentest
+			integrationstest: min 2 komp zusammenstecken
+			schnittstellendokumentation schwer beschreibbar und lässt daher immer fehlinterprettionen zu
+			systemtest:  test ganzer sw-komplexe (also auch mehrere sw-systeme im verbund)
+				vor dem abnahmetetst letzte auf funktionale testung
+			abnahmetest: va rechtliche bedeutung
+				
+\pagebreak
+\end{document}
