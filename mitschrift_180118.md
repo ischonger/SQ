@@ -31,6 +31,9 @@ zeitplanung
 ===
  * logische testfälle erstellen, abstrakter
  * mini-wasserfall im sprint vermeiden
+ * absprechen was noch gehen soll und daran entscheiden, ob ein fehler noch aufgetreten ist oder nicht
+ * nicht alles paralell machen, sondern motivieren, dass immer alles stückweise fertig wird => besser für zusammenarbeit
+ * möglichst minimalistische soll-nforderungen der tickets ermöglichen
  * beisst sich das nicht mit dem ticket-system? ticket gibt doch eindeutig an, wer gerade die zuständigkeit hat ???
 
  definition of test (dot)
@@ -40,8 +43,12 @@ zeitplanung
   * gegliedert nach code stosy integrationund release ebene
   * definerit nicht tiefer als code ebene
   * continuos integation
-  * story ebene: automatisierte tests nicht zu früh implementieren, weil der code sich eh noch ständig ändert
-  * integrationsebene: schaut, was alles so zusammenspielt, mit endnutzern
+  * ebenen:
+    * code ebene
+    * story ebene: automatisierte tests nicht zu früh implementieren, weil der code sich eh noch ständig ändert
+    * integrationsebene: schaut, was alles so zusammenspielt, mit endnutzern
+    * release ebene
+    * für jede ebene eine dot, dod
 
 continuos integration
 ===
@@ -55,7 +62,7 @@ continuos integration
   * spezialisiert zT auf sicherheit
  * max 10 min laufzeit, praktisch aber schwierig, oft parallelisierung notwendig
  * so immer garantiert, dass der aktuelle code geprüft wird
- * zB jenkins...
+ * zB jenkins, teamCity, ...
 
  continuos delivery
  ===
