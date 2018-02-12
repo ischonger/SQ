@@ -70,7 +70,10 @@ Ebenen der Testautomatisierungen
   ===
     * validierung macht tests sehr langsam
     * kaum testgewinne
+    * bei automatischen tests amngekt es an intelligenz (es muss halt alles reinprogrammiert werden)
     * James Bach: "Ein automatisierter Test testet nicht, er prüft nur."
-
-
--> prüfungen immer montags oder dienstags, mittwochs, an xceptance adresse, ab 12.2.
+    * benutzerfreundlichkeit schwer testbar
+    * automatische tests gehen immer den "happy path" -> stolperstellen werden nie gefunden
+    * man automatisiert all das, wo es halt geht^^
+      * zB Pflegefehler können nicht gefunden werden
+    * testing mindset vs automation mindset
