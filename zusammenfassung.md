@@ -246,3 +246,42 @@ agile qs - tester im team
 * neue herausforderungen an qs:
   * soziale schranke abbauen
   * weitere technische herausforderungen (CI, eigener testcode, code reviews)
+
+aufgaben von testern in scrum-team:
+  * sprint planning: aufwandschätzung unter aspekt des testings (wielange dazuert testphase?)
+  * daily scrum: wie alle anderen
+  * sprint review: präsentieren ihre ergebnisse, oft vom ganzen team, feedback
+  * sprint retroperspective: wie kann man aus qs-sicht probleme lösen?
+
+in-cycle vs out-of-cycle
+  * scrum fordert in-cycle!
+  * scrum versucht den aufwand zeitlich besser zu verteilen als konventionell
+definition of test:
+  * keine feste definition von testvorgängen in agilen teams
+  * code-ebene (kontinuierlich während des sprints):
+    1) ähnich tdd: code wird erst commited, wenn er test besteht
+    2) überführung code auf ci-tool
+    3) code review auf ci-system
+  * story-ebene (für jede user story, mehrmals im sprint)
+    * feingleiderung von test+akzeptanzkriterien
+    * implementierung der testfälle
+    * evtl regressionstest
+  * integrationsebene (am sprint-ende)
+    * implementierung + aufbau + automatisierung von integrationstests
+    * exploratives testen und nicht-funktionale tests (zB Lasttests)
+  * release - ebene:
+    * abnahmetests (zB end-to-end-test)
+
+testzyklus:
+  * automatische (unittests) nach jedem commit
+  * integrationstests bspw 1x jede nacht
+  * regelm lasttests
+  * abnahmetests nach jedem deployment
+
+continuous integration
+  * dev committed code auf ci-umgebung, tests werden automatisch ausgeführt, => schnelles feedback (max  10min laufzeit)
+
+continuous delivery:
+  * sammlung von methodiken, tools, ...
+  * ermglt schnelles kundenfeedback
+  * erfordert ausgezeichnete kommunikation!!
