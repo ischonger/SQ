@@ -285,3 +285,46 @@ continuous delivery:
   * sammlung von methodiken, tools, ...
   * ermglt schnelles kundenfeedback
   * erfordert ausgezeichnete kommunikation!!
+
+testautomatisierung-grundlagen:
+  *  testfälle einfach und atomar halten
+  * testet vor Allem (nicht?) funktionales
+  * pro:
+    * höhere qualität, testabdeckung
+    * geringer zeit+kostenaufwand
+    * ci-integrierbar
+    * weniger monotne aufgaben für tester
+    * schnell und zuverlässig
+  * nach:
+    * hoher initailaufwand
+    * code nur so gut, wie der, der's geschrieben hat
+    * sehr komplex, verbunden mit hohen wartungskosten: code muss immer angepasst werden
+    * zT teuer
+
+testautomatisierung - ebenen:
+  * manuelle tests
+  * GUI - tests [driver > testfälle] > test-koonente: zu testender code
+  * API-test [client: driver > testfälle] > server: zu testender code
+  oder: driver > testfälle  > [API: zu testnder code]
+  * unittest ebene driver > testfälle > zu tesnender code
+
+testautomatisierung - grenzen
+  * auf höheren ebenen sehr teuer
+  * mangelnde intelligenz
+
+tdd (test driven development)
+  * erst die testfälle dann der code , soll fehler von grundauf minimieren
+  1) erstelle testfälle aus black-box sicht
+  2) schreibe methodenrümpfe
+  3) überlege testfälle
+  4) implementiere testfälle (normal, sonder, fehlerfälle)
+  5) zuerst alles rot,
+  6) dann wird's besser!
+
+bdd (behaviour driven development)
+  * hilft für verständnis des codes
+  * aus gwt datei werden methodenrümpfe entwickelt
+  * given when then
+
+atdd
+  * ähnlicher ansatz wie bdd
