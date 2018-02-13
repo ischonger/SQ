@@ -328,3 +328,13 @@ bdd (behaviour driven development)
 
 atdd
   * ähnlicher ansatz wie bdd
+
+lasttest:
+  * ziele:
+  1) aufdeckung funktionaler fehler
+  2) zeit+verbrauchsverhalten unter last
+
+  * testet nach iso 9126 / 25000:
+    * funktionale  eignung (f.korrektheit)
+    * effizienz (ZiRKus)
+    * zuverlässigkeit: reife, vorhandenseinbarkeit
